@@ -1,0 +1,89 @@
+package shrijah;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+class Showroom{
+	int id;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	ArrayList<Cars> cars;
+	
+	public ArrayList<Cars> getCars() {
+		return cars;
+	}
+	public void setCars(ArrayList<Cars> cars) {
+		this.cars = cars;
+	}
+	public Showroom(int id, ArrayList<Cars> cars) {
+		super();
+		this.id = id;
+		this.cars = cars;
+	}	
+	
+	
+}
+
+class Cars{
+	int modelno;
+	String name;
+	String color;
+	public int getModelno() {
+		return modelno;
+	}
+	public void setModelno(int modelno) {
+		this.modelno = modelno;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public Cars(int modelno, String name, String color) {
+		super();
+		this.modelno = modelno;
+		this.name = name;
+		this.color = color;
+	}
+	
+}
+
+public class Test2 {
+
+	public static void main(String[] args) {
+		 
+		Cars c1=new Cars(907,"h-8","black");
+		Cars c2=new Cars(890, "m-6","blue");
+		
+		//Showroom showroom=new Showroom(1,cars);
+		
+		ArrayList<Cars> cars=new ArrayList<>();
+		cars.add(c1);
+		cars.add(c2);
+		Showroom showroom1=new Showroom(1,cars);
+		HashMap<Integer,ArrayList<Cars>> hashmap=new HashMap<>();
+		
+		hashmap.put(showroom1.getId(),cars);
+		ArrayList<Cars> car=hashmap.get(1);
+		
+		showroom1.setCars(cars);
+		ArrayList<Cars> ca= showroom1.getCars();
+		for(Cars c:ca)
+		{
+		System.out.println(c.getModelno() +" "+ c.getColor() +" "+ c.getName());
+		
+		}
+	}
+
+}
