@@ -1,0 +1,27 @@
+package shrijah;
+
+import java.util.StringTokenizer;
+
+class Reverse{
+	 public void rev(String data){			
+	StringTokenizer tokenizer = new StringTokenizer(data, " ");
+		while (tokenizer.hasMoreTokens()) {
+			String t=tokenizer.nextToken()+" ";
+			char[] a=t.toCharArray();
+			for(int j=a.length-1;j>=0;j--)
+			{
+			System.out.print(a[j]);	
+			}
+	}
+	 }
+}
+
+
+public class Test {
+public static void main(String[] args) 
+{
+	Reverse reverse=new Reverse();
+	reverse.rev("Welcome to Java");
+}
+}
+
